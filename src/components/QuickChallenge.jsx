@@ -1,18 +1,18 @@
+import React, {useState} from 'react'
+
 export default function QuickChallenge() {
-    const thingsArray = ['Thihg 1', 'THing 2']
-    function addItem(){
-        const count = thingsArray.length + 1
-        thingsArray.push(`Thing ${count}`)
-        console.log(thingsArray)
+    const [value,setValue] = useState(0)
+    function plus(){
+        setValue((prevValue) => prevValue + 1)
     }
-    const showThingsArray = thingsArray.map((thing) =>{
-        return <p key={thing}>{thing}</p>
-    })
+    function minus(){
+        setValue(value-1)
+    }
     return (
         <>
-            <hr></hr>
-            <button onClick={addItem}>Add Item</button>
-            {showThingsArray}
+            <button onClick={plus}>+</button>
+            <h1>{value}</h1>
+            <button onClick={minus}>-</button>
         </>
     )
 }
