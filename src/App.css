@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Karla:wght@200;400;800&family=Lora:ital,wght@0,400;0,600;1,700&family=Poppins:wght@300;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --primary-color: #672280;
+  --secondary-color: #A626D3;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-color: #9d8ca2;
   color: white;
+  font-family: 'Karla', sans-serif;
+  height: 550px;
+  width: 550px;
 }
 
-.App-link {
-  color: #61dafb;
+#navbar {
+  align-items: center;
+  background: linear-gradient(to right, #672280, #A626D3);
+  display: flex;
+  flex-direction: row;
+  height: 65px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 550px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#nav-item-1 {
+  height: 50%;
+  padding-right: 10px;
+}
+
+#nav-item-2 {
+  font-weight: 700;
+  font-size: 20.75px;
+  letter-spacing: -10%;
+  line-height: 24.25px;
+}
+
+#nav-item-3 {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14.52px;
+  margin-left: auto;
+}
+
+#generating-form {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto auto;
+}
+
+#first-input {
+  border-radius: 5px;
+  grid-area: 1/1/2/2;
+  height: 30px;
+  margin: 10px;
+  padding: 10px;
+  text-indent: 5px;
+}
+
+#second-input {
+  border-radius: 5px;
+  grid-area: 1/2/2/3;
+  height: 30px;
+  margin: 10px;
+  padding: 10px;
+  text-indent: 5px;
+}
+
+#submit-button {
+  background: linear-gradient(to right, #672280, #A626D3);
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-family: 'Karla', sans-serif;
+  grid-area: 2/1/3/3;
+  height: 50px;
+  margin: 5px 10px;
 }
