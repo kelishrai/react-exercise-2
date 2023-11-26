@@ -6,8 +6,12 @@ export default function QuickChallenge() {
         setValue((prevValue) => prevValue + 1)
     }
     function minus(){
-        setValue(value-1)
+        setValue((prevValue) => prevValue - 1)
     }
+    const isGoingOut = false
+    let answer
+    isGoingOut ? answer = "yes" : answer = "no"
+    console.log(answer)
     return (
         <>
             <button onClick={plus}>+</button>
