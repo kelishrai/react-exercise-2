@@ -1,18 +1,32 @@
-import React, {useState} from 'react'
+import React from 'react'
+import boxes from '../data/boxes'
+
+function Box(props){
+    let isDarkMode = props.fill
+    const borderRadiusAmount = "10px"
+    const myDivStyle = {
+        display: "inline-block",
+        height: "100px", 
+        width: "100px", 
+        border: "1px solid white", 
+        margin: "4px",
+        backgroundColor: isDarkMode ? "#222222" : "#cccccc",
+        borderRadius: borderRadiusAmount
+    }
+    return(
+        <div style={myDivStyle}></div>
+    )
+}
 
 export default function QuickChallenge() {
-    let thingsArray = ["Thing 1 ","Thing 2 "]
-    const [thingsArrayState,setThingsArrayState] = useState(thingsArray)
-    function changeThingsArrayState(){
-        setThingsArrayState((prevThingsArrayState) => {
-            return [...prevThingsArrayState,`Thing ${prevThingsArrayState.length + 1} `]
-            }
-        )
-    }
+    const [boxState,setBoxState] = React.useState(boxes)
+    const boxDisplay = boxState.map((box) => (
+        <Box key={box.id} fill={box.on}/>
+    ))
+
     return (
-        <>
-            <button onClick={changeThingsArrayState}>Add Thing</button>
-            <h1>{thingsArrayState}</h1>
-        </>
+        <main id="quick-challenge">
+            {boxDisplay}
+        </main>
     )
 }

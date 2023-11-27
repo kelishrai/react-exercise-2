@@ -53,7 +53,7 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 100vh;
   width: 550px;
 }
 
@@ -95,4 +95,12 @@ body {
 #meme-img {
   height: 300px;
   max-width: 550px;
+}
+
+#quick-challenge {
+  background-color: black;
+  color: white;
+  height: 100vh;
+  padding: 100px;
+  width: 100vw;
 }
