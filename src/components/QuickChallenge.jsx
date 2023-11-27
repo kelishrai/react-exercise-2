@@ -1,22 +1,18 @@
 import React, {useState} from 'react'
 
 export default function QuickChallenge() {
-    const [value,setValue] = useState(0)
-    function plus(){
-        setValue((prevValue) => prevValue + 1)
+    let thingsArray = ["Thing 1 ","Thing 2 "]
+    const [thingsArrayState,setThingsArrayState] = useState(thingsArray)
+    function changeThingsArrayState(){
+        setThingsArrayState((prevThingsArrayState) => {
+            return [...prevThingsArrayState,`Thing ${prevThingsArrayState.length + 1} `]
+            }
+        )
     }
-    function minus(){
-        setValue((prevValue) => prevValue - 1)
-    }
-    const isGoingOut = false
-    let answer
-    isGoingOut ? answer = "yes" : answer = "no"
-    console.log(answer)
     return (
         <>
-            <button onClick={plus}>+</button>
-            <h1>{value}</h1>
-            <button onClick={minus}>-</button>
+            <button onClick={changeThingsArrayState}>Add Thing</button>
+            <h1>{thingsArrayState}</h1>
         </>
     )
 }
